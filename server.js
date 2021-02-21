@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 const mongoose = require('mongoose');
 const { response } = require('express');
@@ -27,6 +28,7 @@ mongoose.connect(mongoDbUrl,{useNewUrlParser:true})
 
 app.use('/',indexRouter)
 app.use('/authors',authorRouter)
+app.use('/books',bookRouter)
 
 
 app.listen(process.env.PORT || 3000);
